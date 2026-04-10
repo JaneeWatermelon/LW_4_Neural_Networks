@@ -64,6 +64,9 @@ def load_and_prepare_data(csv_path: str, config: TrainingConfig):
 
     df = pd.read_csv(csv_path)
 
+    print(f"Загружено объектов: {len(df)}")
+    print(f"Признаков: {len(df.columns)}")
+
     # Идентификатор сотрудника не несет полезной информации для прогноза.
     df = df.drop(columns=["Employee_ID"])
 
